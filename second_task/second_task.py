@@ -45,27 +45,32 @@ Hо взял он меч, и взял он щит,
 new_string = """""".join(random.choices(string.ascii_uppercase + string.digits, k=10))
 old_name = "".join(random.choices(string.ascii_uppercase + string.digits, k=7))
 
-# saving original verse to a randomly generated txt file
-time.sleep(3)
-keyboard.write(barmaglot_verse)
-keyboard.send("ctrl+s")
-keyboard.write(f"{old_name}.txt")
-keyboard.send("f4")
+if __name__ == "__main__":
+    # saving original verse to a randomly generated txt file
+    time.sleep(3)
+    keyboard.write(barmaglot_verse)
+    keyboard.send("ctrl+s")
+    keyboard.write(f"{old_name}.txt")
+    keyboard.send("f4")
 
-# replacing path with desktop
-for i in range(40):
-    keyboard.send("backspace")
+    # replacing path with desktop
+    for i in range(50):
+        keyboard.send("backspace")
 
-time.sleep(0.5)
-keyboard.write("Рабочий стол")
-
-for i in range(4):
+    time.sleep(5)
+    desktop = os.path.join(os.path.join(os.environ['USERPROFILE']), 'Desktop')
+    print(desktop)
+    keyboard.write(desktop)
     keyboard.send("enter")
+    time.sleep(5)
 
-# writing new string into existing file
-time.sleep(0.5)
-keyboard.write(new_string)
-keyboard.send("ctrl+shift+s")
-keyboard.write(f"{old_name}_new.txt")
-keyboard.send("enter")
-keyboard.send("alt+f4")
+    for i in range(5):
+        keyboard.send("enter")
+
+    # writing new string into existing file
+    time.sleep(0.5)
+    keyboard.write(new_string)
+    keyboard.send("ctrl+shift+s")
+    keyboard.write(f"{old_name}_new.txt")
+    keyboard.send("enter")
+    keyboard.send("alt+f4")
