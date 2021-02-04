@@ -4,7 +4,7 @@ import openpyxl
 import pandas as pd
 from selenium import webdriver
 
-path_to_gecko = r"C:\selenium_drivers\gecko\geckodriver.exe"
+path_to_gecko = r".\geckodriver.exe"
 
 
 def get_temprerature(city, degrees):
